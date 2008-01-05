@@ -1,0 +1,5 @@
+Revision history for Perl extension Time::Fake:
+
+0.10	Fri Jan 04, 2008
+	- Initial release.
+	- see http://perlmonks.org/?node_id=660449 for inspiration
