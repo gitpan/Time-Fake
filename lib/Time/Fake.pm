@@ -2,7 +2,7 @@ package Time::Fake;
 use Carp;
 use strict;
 use vars '$VERSION';
-$VERSION = "0.10";
+$VERSION = "0.11";
 
 #####################
 
@@ -11,12 +11,12 @@ my $OFFSET = 0;
 *CORE::GLOBAL::time = sub() { CORE::time() + $OFFSET };
 
 *CORE::GLOBAL::localtime = sub(;$) {
-   @_ ? CORE::localtime(@_)
+   @_ ? CORE::localtime($_[0])
       : CORE::localtime(CORE::time() + $OFFSET);
 };
 
 *CORE::GLOBAL::gmtime = sub(;$) {
-   @_ ? CORE::gmtime(@_)
+   @_ ? CORE::gmtime($_[0])
       : CORE::gmtime(CORE::time() + $OFFSET);
 };
 

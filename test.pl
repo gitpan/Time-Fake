@@ -1,5 +1,5 @@
 use Time::Fake;
-use Test::More 'no_plan';
+use Test::More tests => 7;
 use strict;
 
 my $mon = (localtime)[4];
@@ -24,4 +24,10 @@ is( time,
     $epoch,
     "epoch as argument" );
 
+is( scalar localtime(time),
+    scalar localtime(),
+    "localtime with arg gives same thing" );
 
+is( scalar gmtime(time),
+    scalar gmtime(),
+    "gmtime with arg gives same thing" );
